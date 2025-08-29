@@ -1,0 +1,43 @@
+<html>
+
+<head>
+        <title>PDF Uploading</title>
+        <script>
+                async function sendPdfFile() {
+                        const fileInput = document.getElementById("text_file");
+                        const file = fileInput.files[0];
+                        if (!file) {
+                                document.getElementById("response").textContent = "Please select a file.";
+                                return;
+                        }
+                        const formData = new FormData();
+                        formData.append("pathToPdf", file);
+
+                        try {
+                                const response = await fetch("http://localhost:8080/parsepdf", {
+                                        method: "POST",
+                                        body: formData
+                                });
+
+                                const resultText = await response.text(); // Await the response body
+
+                                if (response.ok) {
+                                        document.getElementById("response").textContent = "Upload successful: " + resultText;
+                                } else {
+                                        document.getElementById("response").textContent = "Upload failed: " + resultText;
+                                }
+                        } catch (error) {
+                                document.getElementById("response").textContent = "Error: " + error;
+                        }
+                }
+        </script>
+</head>
+
+<body>
+        <p>Webpage to upload form 16 pdf</p>
+        <input type="file" id="text_file">
+        <input type="button" id="button1" onclick="sendPdfFile()" value="send to server">
+        <p id="response"></p>
+</body>
+
+</html>
