@@ -40,23 +40,32 @@ With a clean HTML/CSS/JavaScript **frontend** and a powerful **Java Spring Boot*
 ---
 
 ## 📂 Project Structure
-Taxman - Processing of Form 16 PDF/
-├── .mvn/                   # Maven wrapper files
-├── .vscode/                # VS Code workspace and settings
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/demo/
-│   │   │   ├── Service/
-│   │   │   │   └── PdfParseService.java   # Core service to parse Form 16 PDF
-│   │   │   ├── Form16Application.java     # Main Spring Boot application class
-│   │   │   ├── Form16Controller.java      # Handles Form 16 related API requests
-│   │   │   ├── HomeController.java        # Handles basic navigation endpoints
-│   │   │   └── Student.java               # Entity class for student data
-│   │   └── resources/
-│   │       └── UploadPdf.html             # Frontend template for PDF upload
-│   └── test/java/com/example/demo/
-│       └── DemoApplicationTests.java      # Unit tests
-├── target/                 # Build output (generated after compilation)
-├── pom.properties          # Maven configuration
-├── LICENSE                 # Project license
-└── README.md               # Project documentation
+Taxman/
+│
+├── frontend/
+│ └── UploadPdf.html # Frontend upload page using HTML, CSS, JavaScript
+│
+├── backend/
+│ └── src/
+│ └── main/
+│ └── java/
+│ └── com/
+│ └── example/
+│ └── demo/
+│ ├── Service/ # Core business logic (e.g. PdfParseService.java)
+│ │ └── PdfParseService.java
+│ ├── Form16Application.java # Main application starter
+│ ├── Form16Controller.java # Handles Form 16 PDF upload & data extraction
+│ ├── HomeController.java # Controls homepage routing and logic
+│ └── Student.java # Sample entity class
+│ └── resources/
+│ └── application.properties # Project configuration
+│ └── UploadPdf.html # (if needed here as well)
+│
+├── test/
+│ └── java/com/example/demo/
+│ └── DemoApplicationTests.java # Automated tests for backend features
+│
+├── pom.xml # Maven build and dependencies
+├── LICENSE # License information
+└── README.md # Project documentation
