@@ -40,4 +40,25 @@ With a clean HTML/CSS/JavaScript **frontend** and a powerful **Java Spring Boot*
 ---
 
 ## 📂 Project Structure
+Taxman - Processing of Form 16 PDF/
+├── .mvn/                          ⚙️ Maven wrapper files for consistent build environment
+├── .vscode/                       💼 VS Code workspace and settings
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/demo/
+│   │   │       ├── Service/       🛠️ Core business logic for PDF parsing
+│   │   │       │   └── PdfParseService.java
+│   │   │       ├── Form16Application.java  🚀 Main application starter
+│   │   │       ├── Form16Controller.java   🧾 Handles Form 16 PDF upload & data extraction
+│   │   │       ├── HomeController.java     🏠 Controls homepage routing and logic
+│   │   │       └── Student.java             🎓 Sample entity class
+│   │   └── resources/
+│   │       └── UploadPdf.html             📄 Frontend upload page for Form 16 PDF
+│   ├── test/
+│   │   └── java/com/example/demo/
+│   │       └── DemoApplicationTests.java  ✅ Automated tests for backend features
+├── target/                         🎯 Compiled code and build artifacts
+├── pom.properties                  🧩 Maven configuration and dependencies
+└── LICENSE, README.md, etc.        📄 Documentation and licensing information
 
